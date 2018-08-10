@@ -1,9 +1,12 @@
+// Module Imports
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
-
-import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module';
 import { ToDoListModule } from './to-do-list/to-do-list.module';
+
+// Component Imports
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
@@ -12,6 +15,7 @@ import { ToDoListModule } from './to-do-list/to-do-list.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    MaterialModule,
     ToDoListModule,
   ],
   providers: [],

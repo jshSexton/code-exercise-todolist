@@ -1,0 +1,11 @@
+mat-card {
+  .mat-card-header {
+    background-color: deepskyblue;
+    color: ghostwhite;
+    margin: -24px -24px 0px -24px;
+
+    .mat-card-title {
+      margin: 0 32px;
+    }
+  }
+}
