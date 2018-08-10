@@ -1,1 +1,11 @@
-<h3>I'm a To-Do Creation Machine!</h3>
+<div>
+  <form (ngSubmit)="onSubmit()">
+    <button mat-button>
+      <mat-icon>add</mat-icon>
+    </button>
+    <mat-form-field>
+      <mat-label>Add Task</mat-label>
+      <input matInput placeholder="Placeholder" [(ngModel)]="newTask" name="todoTask">
+    </mat-form-field>
+  </form>
+</div>

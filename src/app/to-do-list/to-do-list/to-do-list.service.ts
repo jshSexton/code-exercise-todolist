@@ -24,4 +24,8 @@ export class ToDoListService {
   deleteTodoItem(item: ItodoItem): Observable<Array<ItodoItem>> {
     return this.http.delete<Array<ItodoItem>>(`api/todo_items/${item.id}`, httpOptions);
   }
+
+  addTodoItem(newTask: ItodoItem): Observable<ItodoItem> {
+    return this.http.post<ItodoItem>(`api/todo_items`, newTask, httpOptions);
+  }
 }

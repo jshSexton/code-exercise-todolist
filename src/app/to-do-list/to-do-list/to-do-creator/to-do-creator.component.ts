@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-to-do-creator',
@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./to-do-creator.component.scss']
 })
 export class ToDoCreatorComponent implements OnInit {
+  @Output() formSubmitNotify: EventEmitter<string> = new EventEmitter<string>();
+  newTask: string;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  onSubmit() {
+    this.formSubmitNotify.emit(this.newTask);
+    this.newTask = '';
+  }
 }

@@ -30,4 +30,15 @@ export class ToDoListComponent implements OnInit {
       });
     });
   }
+
+  addNewTodoItem(todoTask: string) {
+    const newTask: ItodoItem = {
+      id: null,
+      description: todoTask,
+      isFinished: false
+    };
+    this.todoService.addTodoItem(newTask).subscribe(task => {
+      this.todoItems.push(task);
+    });
+  }
 }

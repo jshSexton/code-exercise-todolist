@@ -1,7 +1,15 @@
 // Import File for Material Modules used throughout the site.
 import {NgModule} from '@angular/core';
 
-import {MatButtonModule, MatCardModule, MatCheckboxModule, MatDividerModule, MatIconModule, MatInputModule} from '@angular/material';
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatDividerModule,
+  MatFormFieldModule,
+  MatIconModule,
+  MatInputModule
+} from '@angular/material';
 
 @NgModule({
   imports: [
@@ -11,6 +19,7 @@ import {MatButtonModule, MatCardModule, MatCheckboxModule, MatDividerModule, Mat
     MatInputModule,
     MatCheckboxModule,
     MatIconModule,
+    MatFormFieldModule,
   ],
   exports: [
     MatCardModule,
@@ -19,6 +28,7 @@ import {MatButtonModule, MatCardModule, MatCheckboxModule, MatDividerModule, Mat
     MatInputModule,
     MatCheckboxModule,
     MatIconModule,
+    MatFormFieldModule,
   ],
 })
 
