@@ -1,7 +1,14 @@
+@import "../../../custom-theme";
+
+@mixin custom-theme($custom-theme) {
+  $primary: map-get($custom-theme, primary);
+  $foreground: map-get($custom-theme, foreground);
+}
+
 mat-card {
   .mat-card-header {
-    background-color: deepskyblue;
-    color: ghostwhite;
+    background-color: mat-color($custom-theme-primary);
+    color: mat-color($mat-dark-theme-foreground, text);
     margin: -24px -24px 0px -24px;
 
     .mat-card-title {

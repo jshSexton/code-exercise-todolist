@@ -1,1 +1,6 @@
-<p>I'm a To-Do Card!</p>
+<div>
+  <mat-checkbox>{{todoInfo.description}}</mat-checkbox>
+  <button mat-button (click)="onDeleteClick()">
+    <mat-icon>clear</mat-icon>
+  </button>
+</div>

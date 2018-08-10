@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ItodoItem} from './to-do-list';
 import {ToDoListService} from './to-do-list.service';
 
@@ -14,11 +14,20 @@ export class ToDoListComponent implements OnInit {
     private todoService: ToDoListService,
   ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    // Get list of items from db
     this.todoService.getTodoItems().subscribe(apiResponse => {
       this.todoItems = apiResponse;
-      console.log('Data from API', this.todoItems);
     });
   }
 
+  deleteTodoItem(todoItem: ItodoItem) {
+    // Call service to delete item from db
+    this.todoService.deleteTodoItem(todoItem).subscribe(() => {
+      // After getting response from server remove the item from the list
+      this.todoItems = this.todoItems.filter(item => {
+        return item.id !== todoItem.id;
+      });
+    });
+  }
 }
