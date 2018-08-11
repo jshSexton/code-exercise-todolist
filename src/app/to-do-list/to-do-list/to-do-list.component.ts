@@ -41,4 +41,28 @@ export class ToDoListComponent implements OnInit {
       this.todoItems.push(task);
     });
   }
+
+  getTotalItems(): number {
+    return this.todoItems.length;
+  }
+
+  getTotalItemsTodo(): number {
+    let todoTotal = 0;
+    this.todoItems.forEach(item => {
+      if (item.isFinished === false) {
+        todoTotal++;
+      }
+    });
+    return todoTotal;
+  }
+
+  getTotalItemsDone(): number {
+    let doneTotal = 0;
+    this.todoItems.forEach(item => {
+      if (item.isFinished === true) {
+        doneTotal++;
+      }
+    });
+    return doneTotal;
+  }
 }

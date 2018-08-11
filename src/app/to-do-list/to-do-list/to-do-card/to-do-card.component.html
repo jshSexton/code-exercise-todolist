@@ -1,5 +1,5 @@
 <div>
-  <mat-checkbox>{{todoInfo.description}}</mat-checkbox>
+  <mat-checkbox [(ngModel)]="todoInfo.isFinished">{{todoInfo.description}}</mat-checkbox>
   <button mat-button class="del-icon" (click)="onDeleteClick()">
     <mat-icon>clear</mat-icon>
   </button>
