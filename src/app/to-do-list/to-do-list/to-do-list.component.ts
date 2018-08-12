@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ItodoItem} from './to-do-list';
+import {FilterMode, ItodoItem} from './to-do-list';
 import {ToDoListService} from './to-do-list.service';
 
 @Component({
@@ -9,6 +9,8 @@ import {ToDoListService} from './to-do-list.service';
 })
 export class ToDoListComponent implements OnInit {
   todoItems: Array<ItodoItem>;
+  filterMode: FilterMode;
+  filterModeEnum = FilterMode;
 
   constructor(
     private todoService: ToDoListService,

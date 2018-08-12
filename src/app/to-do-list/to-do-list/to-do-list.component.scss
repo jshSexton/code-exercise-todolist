@@ -17,6 +17,16 @@ mat-card {
   }
 }
 
-.filterText {
+.filterGroup {
   font-size: .75rem;
+  width: 100%;
+}
+
+mat-button-toggle {
+  min-width: auto;
+  padding: 0 5px;
+}
+
+.mat-button-toggle-label-content {
+  line-height: 20px;
 }

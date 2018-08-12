@@ -7,15 +7,34 @@
   <mat-card-content>
     <app-to-do-creator (formSubmitNotify)="addNewTodoItem($event)"></app-to-do-creator>
     <div *ngFor="let item of todoItems;">
-      <app-to-do-card [todoInfo]="item"
-                      (deleteNotify)="deleteTodoItem($event);"></app-to-do-card>
-      <mat-divider *ngIf="item != todoItems[todoItems.length-1]"></mat-divider>
+      <div *ngIf="filterMode == filterModeEnum.all ||
+                  (filterMode == filterModeEnum.done && item.isFinished) ||
+                  (filterMode == filterModeEnum.todo && !item.isFinished)">
+        <app-to-do-card [todoInfo]="item"
+                        (deleteNotify)="deleteTodoItem($event);"></app-to-do-card>
+        <mat-divider *ngIf="item != todoItems[todoItems.length-1]"></mat-divider>
+      </div>
     </div>
   </mat-card-content>
   <mat-card-footer>
     <mat-divider></mat-divider>
     <div>
-      <span *ngIf="todoItems" class="filterText">Filter:    <button>all({{getTotalItems()}})</button>  |  to do ({{getTotalItemsTodo()}})  |  done ({{getTotalItemsDone()}})</span>
+      <span>
+      <mat-button-toggle-group *ngIf="todoItems" class="filterGroup" [(ngModel)]="filterMode">
+        Filter:
+        <mat-button-toggle value="allTasks">
+          all({{getTotalItems()}})
+        </mat-button-toggle>
+        |
+        <mat-button-toggle value="todoTasks">
+          to do ({{getTotalItemsTodo()}})
+        </mat-button-toggle>
+        |
+        <mat-button-toggle value="doneTasks">
+          done ({{getTotalItemsDone()}})
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+      </span>
     </div>
   </mat-card-footer>
 </mat-card>
