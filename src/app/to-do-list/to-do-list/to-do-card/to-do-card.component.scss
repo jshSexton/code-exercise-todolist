@@ -1,4 +1,29 @@
-.del-icon {
+@import "../../../../custom-theme";
+
+@mixin custom-theme($custom-theme) {
+  $accent: map-get($custom-theme, accent);
+  $warn: map-get($custom-theme, warn);
+}
+
+div {
+  line-height: 36px;
+}
+
+button {
   min-width: 2rem;
   padding: 0 10px;
+  position: absolute;
+  right: 0;
+}
+
+.accent-hover {
+  color: mat-color($custom-theme-accent);
+}
+
+.warn-hover {
+  color: mat-color($custom-theme-warn);
+}
+
+.strike-through {
+  text-decoration: line-through;
 }

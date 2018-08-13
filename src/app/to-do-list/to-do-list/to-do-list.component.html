@@ -22,15 +22,15 @@
       <span>
         <mat-button-toggle-group *ngIf="todoItems" class="filterGroup" [(ngModel)]="filterMode">
           <span class="titleText">Filter:</span>
-          <mat-button-toggle value="allTasks">
+          <mat-button-toggle value="allTasks" class="short-toggle-content">
             <span>all({{getTotalItems()}})</span>
           </mat-button-toggle>
           <span>|</span>
-          <mat-button-toggle value="todoTasks">
+          <mat-button-toggle value="todoTasks" class="short-toggle-content">
             <span>to do ({{getTotalItemsTodo()}})</span>
           </mat-button-toggle>
           <span>|</span>
-          <mat-button-toggle value="doneTasks">
+          <mat-button-toggle value="doneTasks" class="short-toggle-content">
             <span>done ({{getTotalItemsDone()}})</span>
           </mat-button-toggle>
         </mat-button-toggle-group>

@@ -1,7 +1,15 @@
+@import "../../../../custom-theme";
+
+@mixin custom-theme($custom-theme) {
+  $primary: map-get($custom-theme, primary);
+  $foreground: map-get($custom-theme, foreground);
+}
+
 .mat-button {
   min-width: 2rem;
   padding: 0;
   margin-right: .75rem;
+  color: mat-color($custom-theme-primary);
 }
 
 .mat-form-field {

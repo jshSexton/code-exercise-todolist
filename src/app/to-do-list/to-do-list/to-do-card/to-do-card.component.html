@@ -1,6 +1,17 @@
-<div>
-  <mat-checkbox [(ngModel)]="todoInfo.isFinished">{{todoInfo.description}}</mat-checkbox>
-  <button mat-button class="del-icon" (click)="onDeleteClick()">
+<div (mouseenter)="onMouseEnter()" (mouseleave)="onMouseLeave()">
+  <mat-checkbox [(ngModel)]="todoInfo.isFinished"
+                [ngClass]="{
+                  'accent-hover': currentHoverState == hoverStateEnum.OverCheckbox,
+                  'warn-hover': currentHoverState == hoverStateEnum.OverDelete,
+                  'strike-through': todoInfo.isFinished
+                }">
+    {{todoInfo.description}}
+  </mat-checkbox>
+  <button mat-button color="warn" class="no-hover-effect"
+          (mouseover)="onMouseOverDelete()"
+          (mouseout)="onMouseOutDelete()"
+          (click)="onDeleteClick()"
+          *ngIf="currentHoverState == hoverStateEnum.OverCheckbox || currentHoverState == hoverStateEnum.OverDelete">
     <mat-icon>clear</mat-icon>
   </button>
 </div>
