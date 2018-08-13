@@ -20,20 +20,20 @@
     <mat-divider></mat-divider>
     <div>
       <span>
-      <mat-button-toggle-group *ngIf="todoItems" class="filterGroup" [(ngModel)]="filterMode">
-        Filter:
-        <mat-button-toggle value="allTasks">
-          all({{getTotalItems()}})
-        </mat-button-toggle>
-        |
-        <mat-button-toggle value="todoTasks">
-          to do ({{getTotalItemsTodo()}})
-        </mat-button-toggle>
-        |
-        <mat-button-toggle value="doneTasks">
-          done ({{getTotalItemsDone()}})
-        </mat-button-toggle>
-      </mat-button-toggle-group>
+        <mat-button-toggle-group *ngIf="todoItems" class="filterGroup" [(ngModel)]="filterMode">
+          <span class="titleText">Filter:</span>
+          <mat-button-toggle value="allTasks">
+            <span>all({{getTotalItems()}})</span>
+          </mat-button-toggle>
+          <span>|</span>
+          <mat-button-toggle value="todoTasks">
+            <span>to do ({{getTotalItemsTodo()}})</span>
+          </mat-button-toggle>
+          <span>|</span>
+          <mat-button-toggle value="doneTasks">
+            <span>done ({{getTotalItemsDone()}})</span>
+          </mat-button-toggle>
+        </mat-button-toggle-group>
       </span>
     </div>
   </mat-card-footer>

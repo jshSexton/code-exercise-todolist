@@ -9,7 +9,7 @@ import {ToDoListService} from './to-do-list.service';
 })
 export class ToDoListComponent implements OnInit {
   todoItems: Array<ItodoItem>;
-  filterMode: FilterMode;
+  filterMode: FilterMode = FilterMode.all;
   filterModeEnum = FilterMode;
 
   constructor(
